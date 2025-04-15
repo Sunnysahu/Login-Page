@@ -27,7 +27,7 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  filter: blur(2px);
+  filter: blur(3px);
   z-index: -3;
 }
 
