@@ -1,0 +1,149 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+.bg {
+  position: relative;
+  min-height: 100vh;
+  overflow: auto;
+}
+
+/* Add blurred background using ::before */
+.bg::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("./bgimage.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  filter: blur(2px);
+  z-index: -3;
+}
+
+.parent {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: -2;
+}
+
+.child {
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 45%;
+  padding: 20px;
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 100;
+  z-index: 1;
+}
+
+.child:hover {
+  border: 1px solid white(255, 255, 255, 0.6);
+  box-shadow: 1px 1px 40px black;
+}
+
+.align {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.high {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.input {
+  border: 1px rgb(179, 179, 179) solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  /* box-shadow: 1px 1px 10px white; */
+  color: white;
+  margin-top: 8%;
+
+  background-color: transparent;
+  outline: none;
+}
+
+.input:focus {
+  outline: none;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  box-shadow: 0px 1px rgba(255, 255, 255, 0.3);
+}
+
+.input::placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+.stuff {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.forget-password {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease, text-decoration 0.3s ease, transform 0.1s ease;
+  display: inline-block;
+}
+
+.forget-password:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.forget-password:active {
+  color: blue;
+  transform: scale(0.95);
+}
+
+.button {
+  background-color: rgba(255, 255, 255, 0.8);
+  opacity: 0.5;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 1%;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+  opacity: 0.8;
+}
+
+/* :root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+} */
